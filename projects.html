@@ -12,22 +12,36 @@
     <canvas id="matrix"></canvas>
 
     <main class="content">
-        <h1>Arshavir Mirzakhani</h1>
+        <h1 class="title">Arshavir Mirzakhani</h1>
+
         <div class="menu">
-            <a class="btn" href="./index.html">HOME</a>
-            <a class="btn" href="./projects.html">PROJECTS</a>
-            <a class="btn" href="https://github.com/arshavirm">GITHUB</a>
+            <a class="btn" href="./index.html">Home</a>
+            <a class="btn" href="./projects.html">Projects</a>
+            <a class="btn" href="https://github.com/arshavirm" target="_blank">GitHub</a>
         </div>
-        <br>
-        <h1>projects</h1>
-        <br>
-        <h3>
-            <a class="btn" href="https://persisos.arshavirm.com">PersisOS</a>
-        </h3>
+
+        <div class="section-title">⌨ projects</div>
+
+        <div class="project-list">
+            <a href="https://persisos.arshavirm.com" target="_blank" class="project-item">
+                <span>PersisOS <span class="project-status">active</span></span>
+                <span class="arrow">⟶</span>
+            </a>
+            <span class="project-desc">Easy to Use Debian-based and Open Source Linux Distro</span>
+
+            <div class="project-item coming-soon">
+                <span>Project-X <span class="project-status">soon</span></span>
+                <span class="arrow">⟶</span>
+            </div>
+            <span class="project-desc">More projects coming soon...</span>
+        </div>
+
+        <div class="footer-cmd">
+            $ ls -la /projects | grep "active"
+        </div>
     </main>
 
+    <script src="bg.js"></script>
 </body>
-
-<script src="bg.js"></script>
 
 </html>
