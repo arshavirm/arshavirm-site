@@ -3,37 +3,73 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Arshavir Mirzakhani</title>
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23fff'/%3E%3Crect x='1' y='1' width='14' height='14' fill='none' stroke='%23000' stroke-width='1.5'/%3E%3Crect x='3' y='3' width='10' height='6' fill='%23000'/%3E%3Crect x='6' y='11' width='4' height='1.5' fill='%23000'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <canvas id="matrix"></canvas>
+    <header class="menubar">
+        <span class="apple">✦</span>
+        <span class="brand">Arshavir Mirzakhani</span>
+        <span class="menu-word">File</span>
+        <span class="menu-word">Edit</span>
+        <span class="menu-word">View</span>
+        <span class="menu-word">Special</span>
+        <span class="clock" id="menu-clock">--:--</span>
+    </header>
 
-    <main class="content">
-        <h1 class="title">Arshavir Mirzakhani</h1>
+    <main class="stage">
+        <section class="mac-window">
+            <div class="title-bar">
+                <div class="close-box" aria-hidden="true"></div>
+                <div class="title-label">about-me.app</div>
+            </div>
 
-        <div class="subtitle">a guy who loves and enjoys making software</div>
+            <div class="window-body">
+                <svg class="computer-icon" viewBox="0 0 32 32" role="img" aria-label="Retro computer icon">
+                    <rect x="2" y="2" width="28" height="20" fill="#fff" stroke="#000" stroke-width="2" />
+                    <rect x="6" y="6" width="20" height="12" fill="#000" />
+                    <rect x="8" y="8" width="14" height="8" fill="#fff" />
+                    <rect x="13" y="24" width="6" height="3" fill="#fff" stroke="#000" stroke-width="1.5" />
+                    <rect x="8" y="28" width="16" height="2" fill="#000" />
+                </svg>
 
-        <div class="menu">
-            <a class="btn" href="./index.html">Home</a>
-            <a class="btn" href="./projects.html">Projects</a>
-            <a class="btn" href="https://github.com/arshavirm" target="_blank">GitHub</a>
-        </div>
+                <h1 class="title">Arshavir Mirzakhani</h1>
+                <p class="subtitle">a guy who loves and enjoys making software</p>
 
-        <div style="margin-top: 25px; width: 100%; max-width: 400px;">
-            <div style="color: #00aa33; font-size: 0.8rem; margin-bottom: 8px; letter-spacing: 2px; opacity: 0.6;">✦
-                featured</div>
-            <a href="https://persisos.arshavirm.com" target="_blank" class="project-item">
-                <span>PersisOS</span>
-                <span class="arrow">⟶</span>
-            </a>
-        </div>
+                <nav class="menu">
+                    <a class="btn current" href="./index.html">Home</a>
+                    <a class="btn" href="./projects.html">Projects</a>
+                    <a class="btn" href="https://github.com/arshavirm" target="_blank" rel="noopener">GitHub</a>
+                </nav>
 
-        <div class="footer-cmd">
-            $ echo "hello world"
-        </div>
+                <div class="featured-block">
+                    <div class="section-title">★ featured</div>
+                    <div class="project-list">
+                        <a href="https://persisos.arshavirm.com" target="_blank" rel="noopener" class="project-item">
+                            <svg class="icon" viewBox="0 0 20 20" aria-hidden="true">
+                                <path d="M1 5 L7 5 L9 7 L19 7 L19 16 L1 16 Z" fill="#fff" stroke="#000"
+                                    stroke-width="1.5" />
+                            </svg>
+                            <div class="label">
+                                <div class="name-row">
+                                    <span>PersisOS</span>
+                                </div>
+                            </div>
+                            <span class="arrow">▸</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="status-bar">
+                <span>Welcome to Macintosh</span>
+                <span id="uptime">uptime: n/a</span>
+            </div>
+        </section>
     </main>
 
     <script src="bg.js"></script>

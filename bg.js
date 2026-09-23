@@ -1,62 +1,37 @@
-(function() {
-const canvas = document.getElementById('matrix');
-const ctx = canvas.getContext('2d');
-
-let width = canvas.width = window.innerWidth;
-let height = canvas.height = window.innerHeight;
-
-const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-const fontSize = 16;
-const columns = Math.floor(width / fontSize);
-const drops = Array(columns).fill(1);
-
-function draw() {
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-  ctx.fillRect(0, 0, width, height);
-
-  const gradient = ctx.createLinearGradient(0, 0, 0, height);
-  gradient.addColorStop(0, '#00ff41');
-  gradient.addColorStop(0.5, '#00cc33');
-  gradient.addColorStop(1, '#006622');
-  ctx.fillStyle = gradient;
-  ctx.font = fontSize + 'px monospace';
-
-  for (let i = 0; i < drops.length; i++) {
-    const text = letters[Math.floor(Math.random() * letters.length)];
-    const x = i * fontSize;
-    const y = drops[i] * fontSize;
-
-    ctx.shadowColor = '#00ff41';
-    ctx.shadowBlur = 8;
-    ctx.fillText(text, x, y);
-    ctx.shadowBlur = 0;
-
-    if (y > height && Math.random() > 0.975) {
-      drops[i] = 0;
+(function () {
+    // Live menu-bar clock, styled like the classic Mac OS menu bar clock.
+    const clockEl = document.getElementById('menu-clock');
+    function updateClock() {
+        if (!clockEl) return;
+        const now = new Date();
+        let h = now.getHours();
+        const m = now.getMinutes().toString().padStart(2, '0');
+        const ampm = h >= 12 ? 'PM' : 'AM';
+        h = h % 12;
+        if (h === 0) h = 12;
+        clockEl.textContent = h + ':' + m + ' ' + ampm;
     }
-    drops[i]++;
-  }
-}
+    updateClock();
+    setInterval(updateClock, 1000 * 15);
 
-setInterval(draw, 40);
-
-window.addEventListener('resize', () => {
-  width = canvas.width = window.innerWidth;
-  height = canvas.height = window.innerHeight;
-
-  const newColumns = Math.floor(width / fontSize);
-  if (newColumns > drops.length) {
-    for (let i = drops.length; i < newColumns; i++) {
-      drops[i] = Math.floor(Math.random() * height / fontSize);
+    // Playful "uptime" counter on the homepage status bar, counted from page load
+    // like an old machine that's been left running.
+    const uptimeEl = document.getElementById('uptime');
+    if (uptimeEl) {
+        const start = Date.now();
+        function updateUptime() {
+            const secs = Math.floor((Date.now() - start) / 1000);
+            const m = Math.floor(secs / 60).toString().padStart(2, '0');
+            const s = (secs % 60).toString().padStart(2, '0');
+            uptimeEl.textContent = 'uptime: ' + m + ':' + s;
+        }
+        updateUptime();
+        setInterval(updateUptime, 1000);
     }
-  }
-  drops.length = newColumns;
-});
 })();
 
 console.log(
     '%c Arshavir Mirzakhani ',
-    'background: #00ff41; color: #0a0a0a; font-size: 20px; font-weight: bold; padding: 10px;');
-console.log('%c Terminal vibe activated. ', 'color: #00ff41; font-size: 14px;');
-console.log(
-    '%c 👾 https://github.com/arshavirm', 'color: #00aa33; font-size: 12px;');
+    'background: #000; color: #fff; font-size: 18px; font-weight: bold; padding: 8px;');
+console.log('%c Welcome to Macintosh. ', 'color: #000; font-size: 13px;');
+console.log('%c \u2318 https://github.com/arshavirm', 'color: #4d4d4d; font-size: 12px;');

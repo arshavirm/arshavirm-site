@@ -3,42 +3,79 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arshavir Mirzakhani - Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Arshavir Mirzakhani — Projects</title>
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23fff'/%3E%3Crect x='1' y='1' width='14' height='14' fill='none' stroke='%23000' stroke-width='1.5'/%3E%3Crect x='3' y='3' width='10' height='6' fill='%23000'/%3E%3Crect x='6' y='11' width='4' height='1.5' fill='%23000'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <canvas id="matrix"></canvas>
+    <header class="menubar">
+        <span class="apple">✦</span>
+        <span class="brand">Arshavir Mirzakhani</span>
+        <span class="menu-word">File</span>
+        <span class="menu-word">Edit</span>
+        <span class="menu-word">View</span>
+        <span class="menu-word">Special</span>
+        <span class="clock" id="menu-clock">--:--</span>
+    </header>
 
-    <main class="content">
-        <h1 class="title">Arshavir Mirzakhani</h1>
-
-        <div class="menu">
-            <a class="btn" href="./index.html">Home</a>
-            <a class="btn" href="./projects.html">Projects</a>
-            <a class="btn" href="https://github.com/arshavirm" target="_blank">GitHub</a>
-        </div>
-
-        <div class="section-title">⌨ projects</div>
-
-        <div class="project-list">
-            <a href="https://persisos.arshavirm.com" target="_blank" class="project-item">
-                <span>PersisOS <span class="project-status">active</span></span>
-                <span class="arrow">⟶</span>
-            </a>
-            <span class="project-desc">Easy to Use Debian-based and Open Source Linux Distro</span>
-
-            <div class="project-item coming-soon">
-                <span>Project-X <span class="project-status">soon</span></span>
-                <span class="arrow">⟶</span>
+    <main class="stage">
+        <section class="mac-window wide">
+            <div class="title-bar">
+                <div class="close-box" aria-hidden="true"></div>
+                <div class="title-label">Projects</div>
             </div>
-            <span class="project-desc">More projects coming soon...</span>
-        </div>
 
-        <div class="footer-cmd">
-            $ ls -la /projects | grep "active"
-        </div>
+            <div class="window-body">
+                <nav class="menu">
+                    <a class="btn" href="./index.html">Home</a>
+                    <a class="btn current" href="./projects.html">Projects</a>
+                    <a class="btn" href="https://github.com/arshavirm" target="_blank" rel="noopener">GitHub</a>
+                </nav>
+
+                <div class="featured-block">
+                    <div class="section-title">⌨ items</div>
+                    <div class="project-list">
+                        <a href="https://persisos.arshavirm.com" target="_blank" rel="noopener" class="project-item">
+                            <svg class="icon" viewBox="0 0 20 20" aria-hidden="true">
+                                <path d="M1 5 L7 5 L9 7 L19 7 L19 16 L1 16 Z" fill="#fff" stroke="#000"
+                                    stroke-width="1.5" />
+                            </svg>
+                            <div class="label">
+                                <div class="name-row">
+                                    <span>PersisOS</span>
+                                    <span class="project-status">active</span>
+                                </div>
+                                <span class="project-desc">Easy to use Debian-based, open source Linux distro</span>
+                            </div>
+                            <span class="arrow">▸</span>
+                        </a>
+
+                        <div class="project-item coming-soon">
+                            <svg class="icon" viewBox="0 0 20 20" aria-hidden="true">
+                                <path d="M3 1 H13 L17 5 V19 H3 Z" fill="#fff" stroke="#000" stroke-width="1.5" />
+                                <path d="M13 1 V5 H17 Z" fill="#000" />
+                            </svg>
+                            <div class="label">
+                                <div class="name-row">
+                                    <span>Project-X</span>
+                                    <span class="project-status soon">soon</span>
+                                </div>
+                                <span class="project-desc">More projects coming soon...</span>
+                            </div>
+                            <span class="arrow">▸</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="status-bar">
+                <span>2 items</span>
+                <span>1 active, 1 pending</span>
+            </div>
+        </section>
     </main>
 
     <script src="bg.js"></script>
